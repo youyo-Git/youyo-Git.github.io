@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 
 
@@ -481,6 +481,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -526,25 +529,21 @@
 <li>赋值运算符：<code>=</code> 、<code>+=</code>、<code>-=</code>、<code> *=</code>、<code>/=</code>、 <code>%=</code></li>
 <li>字符串连接运算符：<code>+</code>任何数据与字符串拼接，结果都是字符串<br>三目(元)运算符： 条件<code>?</code>条件成立时候的值:条件不成立时候的值</li>
 <li><code>typeof()</code>:用来检测数据类型</li>
-<li><font color='cornflowerblue'>面试题（例题）</font><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">3</span>
+<li><font color='cornflowerblue'>面试题（例题）</font><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">3</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span>n<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">++</span>n<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>n<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">//           (4       4        5) 打印出来13 </span>
+<span class="token comment">//           (4       4        5) 打印出来13 </span>
 cosole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">//n是等于6的</span>
-</code></pre>
-</li>
+<span class="token comment">//n是等于6的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h4 id="8-语句"><a href="#8-语句" class="headerlink" title="8. 语句"></a>8. 语句</h4><p>if else 可以进行多重条件判断<br>if(条件){条件成立时候执行的代码}else{条件不成立时候执行的代码 }<br>以下六种情况都算false<br><code>false</code> <code>0</code> <code>undefined</code> <code>null</code> <code>&quot;&quot;</code> <code>NaN</code>。<br><font color='cornflowerblue'>三元运算符：主要返回值，可以直接给其他变量赋值</font><br><font color='cornflowerblue'><code>if else</code> ：不能给直接给其他变量赋值，但是可以进行其他更多的操作</font></p>
 <h4 id="9-隐式类型转换"><a href="#9-隐式类型转换" class="headerlink" title="9. 隐式类型转换"></a>9. 隐式类型转换</h4><p>js中的数据会根据具体情况自动改变数据的类型。<br><font color='cornflowerblue'><br>string + 其他类型：转换为字符串<br>Boolean + number: 转换为 number<br>number + undefined: 转换为 NaN  <strong>Nan不是数据类型，是个结果，表示算不出来</strong><br></font></p>
 <h4 id="10-函数和方法"><a href="#10-函数和方法" class="headerlink" title="10. 函数和方法"></a>10. 函数和方法</h4><p><strong>什么情况下用函数</strong>：如果一段代码要反复调用，那么就考虑封装成函数了<br>封装一段执行专门任务的代码段。<br><strong>函数是不调用不执行的</strong><br>两种函数创建的方法：<br>方法一：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">函数名</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-   代码段<span class="token comment" spellcheck="true">//想干的事</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> 函数名<span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">函数名</span><span class="token punctuation">(</span><span class="token parameter">参数</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   代码段<span class="token comment">//想干的事</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">函数名</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">参数</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    代码段
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong>函数的调用:函数名()</strong><br>参数：函数内独有的变量，接受函数外的数据，在函数内部处理，参数可以让方法更灵<br>活<br>形参：形式上的参数<br>实参：实际上的参数<br>参数不限制数量，不限制数据类型，多个参数之间以逗号隔开就行<br><strong>函数提升：整体提前</strong><br>return关键字：<br>函数是一个纯过程，没有任何结果。<br>如果函数的执行你需要一个结果，可以加return关键字<br>return 你想要的值 函数的结果就是return后面的表达式<br>return的本意其实是退出函数的运行，如果return后面有值的话，那么会在退出的<br>同时，返回一个结果</p>
 <h4 id="11-作用域"><a href="#11-作用域" class="headerlink" title="11. 作用域"></a>11. 作用域</h4><p>一个变量可用的范围</p>
 <ol>
@@ -558,44 +557,41 @@ cosole<span class="token punctuation">.</span><span class="token function">log</
 <li>性能问题：内存泄露（作用域中的局部变量一直被使用着，导致该作用域释放不掉）<br><font color="#5696hh">内层的局部作用域有权使用外部的作用域（一层一层往上找）</font></li>
 </ol>
 <p>例子1：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">0</span>
-   <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+   <span class="token keyword">function</span> <span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
       <span class="token keyword">return</span> n<span class="token operator">++</span>
-   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
    <span class="token keyword">return</span> add
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token function">getNum</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">c</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">//getNum()的返回结果add赋给的全局变量c，而add中一直使用着getNum作用域的局部变量n，</span>
-<span class="token comment" spellcheck="true">//所以全局变量c也是一直用着getNum作用域的局部变量n,因为全局变量c是不会被释放掉的，导致</span>
-<span class="token comment" spellcheck="true">//getNum作用域中的局部变量n一直被使用，所以getNum作用域一直不会被释放掉。</span>
-</code></pre>
+<span class="token comment">//getNum()的返回结果add赋给的全局变量c，而add中一直使用着getNum作用域的局部变量n，</span>
+<span class="token comment">//所以全局变量c也是一直用着getNum作用域的局部变量n,因为全局变量c是不会被释放掉的，导致</span>
+<span class="token comment">//getNum作用域中的局部变量n一直被使用，所以getNum作用域一直不会被释放掉。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>例子2：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    <span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">'dov'</span>
-   <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
       <span class="token keyword">return</span> name
-   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 <span class="token keyword">var</span> b <span class="token operator">=</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//dov</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//dov</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>例子3：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    <span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">3</span>
-   <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+   <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
       <span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">0</span>
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">++</span>n<span class="token punctuation">)</span>
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token operator">++</span>num<span class="token punctuation">)</span>
-   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 <span class="token keyword">var</span> fn1 <span class="token operator">=</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
+<span class="token function">fn1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="13-循环语句"><a href="#13-循环语句" class="headerlink" title="13. 循环语句"></a>13. 循环语句</h4><p>循环：程序反复执行一套相同的代码<br>循环三要素：</p>
 <ol>
 <li>循环变量:循环中做判断的量 循环变量一定是向着循环退出的趋势去变化</li>
@@ -623,11 +619,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>对象的访问：对象.属性名</li>
 <li>对象的更改：对象.属性名=新值 如果本身存在这个属性就是更改，本身如果没有，那就是添加</li>
 <li>对象的属性的删除： delete 对象.属性</li>
-<li>对象的循环：<pre class=" language-js"><code class="language-js"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> 变量名 <span class="token keyword">in</span> 要遍历的对象<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<li>对象的循环： <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> 变量名 <span class="token keyword">in</span> 要遍历的对象<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
 变量名代表的是属性
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 <li><strong><font color="5696ff">对象的属性名如果是变量的话，那么需要加 [ ] </font></strong></li>
 </ul>
 <h4 id="16-内置对象"><a href="#16-内置对象" class="headerlink" title="16. 内置对象"></a>16. 内置对象</h4><ul>
@@ -666,41 +660,31 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 <p>———-以上方法都不能修改原数组———————</p>
 <ul>
-<li><p>push()向数组的结尾追加元素</p>
-</li>
-<li><p>unshift()向数组的开头追加元素</p>
-</li>
-<li><p>pop()删除数组最后一位元素</p>
-</li>
-<li><p>shift()删除数组的第一位元素</p>
-</li>
-<li><p>splice(从哪一位开始删除,删几个,新值)在任意位置添加和删除元素，返回的是被处理后的数组</p>
-</li>
-<li><p>reverse()数组翻转</p>
-</li>
-<li><p>sort()数组排序</p>
-<pre class=" language-js"><code class="language-js">   d<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token keyword">return</span> a<span class="token operator">-</span>b<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
-<p> 冒泡排序：</p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">arrSort</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length ‐ <span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length ‐ <span class="token number">1</span> ‐ j<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-         <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> arr<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<li>push()向数组的结尾追加元素</li>
+<li>unshift()向数组的开头追加元素</li>
+<li>pop()删除数组最后一位元素</li>
+<li>shift()删除数组的第一位元素</li>
+<li>splice(从哪一位开始删除,删几个,新值)在任意位置添加和删除元素，返回的是被处理后的数组</li>
+<li>reverse()数组翻转</li>
+<li>sort()数组排序 <pre class="line-numbers language-js" data-language="js"><code class="language-js">d<span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">a<span class="token punctuation">,</span>b</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">return</span> a<span class="token operator">-</span>b<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+ 冒泡排序： <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">arrSort</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length ‐ <span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length ‐ <span class="token number">1</span> ‐ j<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">></span> arr<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
             <span class="token keyword">var</span> box <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
             arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
             arr<span class="token punctuation">[</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> box
-         <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-   <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+         <span class="token punctuation">&#125;</span>
+      <span class="token punctuation">&#125;</span>
+   <span class="token punctuation">&#125;</span>
    <span class="token keyword">return</span> arr
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> c<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">54</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">878</span><span class="token punctuation">,</span><span class="token number">123</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">63</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">778</span><span class="token punctuation">,</span><span class="token number">986</span><span class="token punctuation">,</span><span class="token number">156</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">778</span><span class="token punctuation">,</span><span class="token number">76</span><span class="token punctuation">,</span><span class="token number">156</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
 
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> m<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>m<span class="token operator">&lt;</span>c<span class="token punctuation">.</span>length<span class="token punctuation">;</span>m<span class="token operator">++</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> m<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>m<span class="token operator">&lt;</span>c<span class="token punctuation">.</span>length<span class="token punctuation">;</span>m<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">arrSort</span><span class="token punctuation">(</span>c<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-</li>
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h5 id="16-5-正则表达式RegExp"><a href="#16-5-正则表达式RegExp" class="headerlink" title="16.5 正则表达式RegExp"></a>16.5 正则表达式RegExp</h5><ul>
 <li>正则表达式：定义字符串中字符出现的规律</li>
@@ -726,13 +710,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ol>
 </li>
 <li>如果备选字符中只有一个备选字符或者只有一个预定义字符集，那么中括号可省略</li>
-<li>对于在正则表达式中有特殊含义的字符，如果希望以原文形式去匹配，需要用\转义 <strong>用法：</strong><pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> reg<span class="token operator">=</span><span class="token regex">/^[/d]&amp;#123;9,11&amp;#125;$/</span>
-reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>被检验的字符串<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//返回布尔值</span>
-<span class="token comment" spellcheck="true">// 注意：正则表达式是部分匹配</span>
-<span class="token comment" spellcheck="true">// 在整条正则表达式的开头加^代表以...开头，在整条正则表达式的结尾加$,代表以...结尾</span>
-<span class="token comment" spellcheck="true">// 在中括号开头加^代表除了...都行</span>
-<span class="token keyword">var</span> reg2 <span class="token operator">=</span> <span class="token operator">/</span><span class="token operator">^</span><span class="token punctuation">[</span><span class="token operator">^</span><span class="token number">123</span><span class="token punctuation">]</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>$<span class="token operator">/</span>  <span class="token comment" spellcheck="true">//不包含123这三种字符的3到6位字符串</span>
-</code></pre>
+<li>对于在正则表达式中有特殊含义的字符，如果希望以原文形式去匹配，需要用\转义 <strong>用法：</strong> <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> reg<span class="token operator">=</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^[/d]&#123;9,11&#125;$</span><span class="token regex-delimiter">/</span></span>
+reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>被检验的字符串<span class="token punctuation">)</span> <span class="token comment">//返回布尔值</span>
+<span class="token comment">// 注意：正则表达式是部分匹配</span>
+<span class="token comment">// 在整条正则表达式的开头加^代表以...开头，在整条正则表达式的结尾加$,代表以...结尾</span>
+<span class="token comment">// 在中括号开头加^代表除了...都行</span>
+<span class="token keyword">var</span> reg2 <span class="token operator">=</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">^[^123]&#123;3,6&#125;$</span><span class="token regex-delimiter">/</span></span>  <span class="token comment">//不包含123这三种字符的3到6位字符串</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h5 id="16-6-Math对象"><a href="#16-6-Math对象" class="headerlink" title="16.6 Math对象"></a>16.6 Math对象</h5></li>
 <li>abs()取绝对值</li>
 <li>round()四舍五入取整</li>
@@ -757,9 +741,9 @@ reg<span class="token punctuation">.</span><span class="token function">test</sp
 <li>以上get方法全改为set即为更改时间，注意，没有setDay()方法</li>
 </ol>
 <p><strong>创建一个指定时间日期:</strong></p>
-<pre class=" language-js"><code class="language-js">   <span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2021/06/08 00:00:00"</span><span class="token punctuation">)</span>
-   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span>
-</code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> time <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token string">"2021/06/08 00:00:00"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h5 id="16-8-Error对象"><a href="#16-8-Error对象" class="headerlink" title="16.8 Error对象"></a>16.8 Error对象</h5><ul>
 <li>SyntaxError(语法错误)</li>
 <li>ReferenceError(引用错误)</li>
