@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.8k
+                    4.9k
                 </div>
                 
 
@@ -770,6 +770,138 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>添加到对应的位置<br>父元素对象.appendChild(子元素对象)</li>
 <li>添加属性和内容</li>
 </ol>
+</li>
+</ol>
+<h4 id="18-事件"><a href="#18-事件" class="headerlink" title="18 事件"></a>18 事件</h4><p>   用户的动作触发的：</p>
+<ul>
+<li>onclick: 点击事件</li>
+<li>onfocus: 获得焦点事件</li>
+<li>onblur: 失去焦点事件</li>
+</ul>
+<h4 id="19-this"><a href="#19-this" class="headerlink" title="19 this"></a>19 this</h4><p>   this指向的是函数运行时所在的对象（谁调用了函数，那么函数中的this就指向谁）<br>   window对象的属性和方法在访问的时候都可以省略前缀</p>
+<h4 id="20-定时器"><a href="#20-定时器" class="headerlink" title="20 定时器"></a>20 定时器</h4><p>   定时器是让网页自动运行的唯一办法</p>
+<ol>
+<li>周期性定时器：每隔一段时间，做什么事<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">setInterval</span><span class="token punctuation">(</span>函数<span class="token punctuation">,</span>间隔毫秒数<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>一次性定时器：等待一定的时间，做什么事<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">setTimeout</span><span class="token punctuation">(</span>函数<span class="token punctuation">,</span>等待毫秒数<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+定时器是一个多线程的程序，定时器的执行结果是一个线程号</li>
+<li>停止定时器<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">clearInterval</span><span class="token punctuation">(</span>线程号<span class="token punctuation">)</span>
+<span class="token function">clearTimeout</span><span class="token punctuation">(</span>线程号<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="21-原型与继承"><a href="#21-原型与继承" class="headerlink" title="21 原型与继承?"></a>21 原型与继承?</h4><p>   原型（prototype）: 方法背后，专门保存由方法创建出来的对象的共有属性。</p>
+<ol>
+<li>对象字面量形式：<code>var obj = &#123;name:&quot;小明&quot;,age:18&#125;</code></li>
+<li>通过构造函数的形式：<code>new Date()</code>,<code>new Array()</code>,<code>new Object()</code>,<code>newRegExp()</code></li>
+</ol>
+<p>   构造函数/对象模板：专门用来创建相同结构的对象的专门方法</p>
+<p>   <strong>new关键字做了那几件事情？</strong></p>
+<ol>
+<li>创建了一个空对象  var u = {}</li>
+<li>改变this指向 call apply</li>
+<li>增加 this.name=”小明” this.age=18</li>
+<li>返回一个全新的对象 return u</li>
+</ol>
+<p>   <strong>共有属性</strong> ： 由统一构造函数创建出来的对象的共享有的属性<br>   <strong>自有属性</strong> ： 属于对象实例的私有方法<br>   <strong>任何对象没有权利修改原型的属性</strong><br>   <strong>继承</strong> ： 使用现有的类型，创建出新的类型，新的类型可以使用现有类型的属性和方法，也可以拓展出现有类型没有的属性和方法</p>
+<h4 id="22-原型链"><a href="#22-原型链" class="headerlink" title="22 原型链?"></a>22 原型链?</h4><p>   <code>Function</code> : 代表的是所有函数的父类<br>   <code>__proto__</code>: 隐式原型。任何一个对象都有饮食原型，用来实现继承的一个对象的影视原型默认指向创建该对象的构造函数的原型对象</p>
+<h4 id="23-绑定事件的第三种方式"><a href="#23-绑定事件的第三种方式" class="headerlink" title="23 绑定事件的第三种方式"></a>23 绑定事件的第三种方式</h4><p>   元素对象.addEventListener(“事件名”,方法对象,是否在补货阶段触发)</p>
+<h4 id="24-事件触发周期"><a href="#24-事件触发周期" class="headerlink" title="24 事件触发周期?"></a>24 事件触发周期?</h4><p>   事件捕获（外–里）–目标触发–事件冒泡（里–外）<br>   事件对象：默认在事件触发的时候自动传入函数的第一个参数，与生俱来的，不是后天来的<br>   阻止冒泡：<code>e.stopPropagation</code>()<br>   事件委托：利用冒泡<br>   事件源对象：<code>e.target</code></p>
+<h4 id="25-Ajax"><a href="#25-Ajax" class="headerlink" title="25 Ajax"></a>25 Ajax</h4><p>   <strong>前端向后端异步取数据而无需刷新页面技术</strong></p>
+<ol>
+<li>使用ajax的步骤<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//1. 创建ajax核心对象</span>
+<span class="token keyword">var</span> xmlhttp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//2. 创建请求 get/post 请求地址   是否异步</span>
+xmlhttp<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"get"</span><span class="token punctuation">,</span><span class="token string">"my.php?user=123411&amp;psd=123456"</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token comment">//3. 发送请求参数 key=value形式的字符串 多个参数之间用&amp;连接</span>
+<span class="token comment">// get请求：请求的参数不能写在send里（post请求要），要写在请求地址后面?连接，send传入参数null</span>
+xmlhttp<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">)</span>
+<span class="token comment">//如果请求方式为post，需要设置请求头</span>
+xmlhttp<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">"Content-Type"</span><span class="token punctuation">,</span><span class="token string">"application/x-www-form-urlencoded"</span><span class="token punctuation">)</span>
+<span class="token comment">//4. 接收响应</span>
+<span class="token comment">//onreadystatechange</span>
+<span class="token comment">//readyState(请求状态)1(服务器已建立连接)2(请求已经接受)3(请求处理中)4(请求完成，响应就绪)0(请求未初始化)</span>
+<span class="token comment">//status(服务端返回的状态码) 404（未找到界面） 500 200（ok） 301 304</span>
+xmlhttp<span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span>xmlhttp<span class="token punctuation">.</span>readyState<span class="token operator">==</span><span class="token number">4</span><span class="token operator">&amp;&amp;</span>xmlhttp<span class="token punctuation">.</span>status<span class="token operator">==</span><span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token comment">//responseText 服务器端返回的文本格式数据</span>
+      <span class="token keyword">var</span> data <span class="token operator">=</span> xmlhttp<span class="token punctuation">.</span>responseText
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="25-jQuery-：js库"><a href="#25-jQuery-：js库" class="headerlink" title="25 jQuery ：js库"></a>25 jQuery ：js库</h4><p><strong>简化版的js</strong></p>
+<ol>
+<li>常用的选择器<table>
+<thead>
+<tr>
+<th>css选择器</th>
+<th>jq选择器</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>:first</code></td>
+<td><code>$(&quot;p:first&quot;)</code></td>
+<td>第一个<code>&lt;p&gt;</code>元素</td>
+</tr>
+<tr>
+<td><code>:last</code></td>
+<td><code>$(&quot;p:last&quot;)</code></td>
+<td>最后一个<code>&lt;p&gt;</code>元素</td>
+</tr>
+<tr>
+<td><code>:even</code></td>
+<td><code>$(&quot;tr:even&quot;)</code></td>
+<td>所有偶数<code>&lt;tr&gt;</code>元素，从0开始</td>
+</tr>
+<tr>
+<td><code>:odd</code></td>
+<td><code>$(&quot;tr:odd&quot;)</code></td>
+<td>所有奇数…</td>
+</tr>
+<tr>
+<td><code>:first-child</code></td>
+<td><code>$(&quot;p:first-child&quot;)</code></td>
+<td>属于其父元素的第一个子元素的所有<code>&lt;p&gt;</code>元素</td>
+</tr>
+<tr>
+<td><code>element + next</code></td>
+<td><code>$(&quot;div + p&quot;)</code></td>
+<td>每个<code>&lt;div&gt;</code>元素响铃的下一个<code>&lt;p&gt;</code>元素</td>
+</tr>
+<tr>
+<td><code>element ~ siblings</code></td>
+<td><code>$(div ~ p)</code></td>
+<td><code>&lt;div&gt;</code>元素的同级的所有<code>&lt;p&gt;</code>元素</td>
+</tr>
+<tr>
+<td><code>:eq(index)</code></td>
+<td><code>$(&quot;ul li:eq(3)&quot;)</code></td>
+<td>列表中的第四个元素（index值从0开始）</td>
+</tr>
+<tr>
+<td><code>:gt(no)</code></td>
+<td><code>$(&quot;ul li:gt(3)&quot;)</code></td>
+<td>列举index&gt;3的元素</td>
+</tr>
+<tr>
+<td><code>:lt(no)</code></td>
+<td><code>$(&quot;ul li:lt(3)&quot;)</code></td>
+<td>列举index&lt;3的元素</td>
+</tr>
+<tr>
+<td><code>:disabled</code></td>
+<td><code>$(&quot;:disabled&quot;)</code></td>
+<td>所有禁用的元素</td>
+</tr>
+<tr>
+<td><code>selected</code></td>
+<td><code>$(&quot;:selected&quot;)</code></td>
+<td>所有选定的下拉元素</td>
+</tr>
+<tr>
+<td><code>：checked</code></td>
+<td><code>$(&quot;:checked&quot;)</code></td>
+<td>所有选中的复选框选项</td>
+</tr>
+</tbody></table>
 </li>
 </ol>
 
