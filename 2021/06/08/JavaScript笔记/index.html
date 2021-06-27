@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.9k
+                    5.1k
                 </div>
                 
 
@@ -489,7 +489,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="1-javaScript-负责网页功能的"><a href="#1-javaScript-负责网页功能的" class="headerlink" title="1. javaScript:负责网页功能的"></a>1. javaScript:负责网页功能的</h4><p>ECMAScript(核心) + DOM(页面操作) + BOM(浏览器操作相关的) <em>script需要放在body的结束标签之前</em></p>
+                <h4 id="1-javaScript-负责网页功能的"><a href="#1-javaScript-负责网页功能的" class="headerlink" title="1. javaScript:负责网页功能的"></a>1. javaScript:负责网页功能的</h4><p>ECMAScript(核心ES5) + DOM(页面操作) + BOM(浏览器操作相关的) <em>script需要放在body的结束标签之前</em></p>
 <p><font color='cornflowerblue'>JS一般写在页面后面，目的是优先加在网页结构，再运行后台代码，提升用户体验</font></p>
 <h4 id="2-编程语言"><a href="#2-编程语言" class="headerlink" title="2. 编程语言"></a>2. 编程语言</h4><p>c ：操作系统、嵌入式、驱动开发<br>c++ ：桌面软件、游戏 (英雄联盟)<br>c# ：Windows桌面软件、.NET Web、服务器<br>java:企业级应用，web开发、服务器后端<br>python<br>php<br>javaScript</p>
 <h4 id="3-程序员"><a href="#3-程序员" class="headerlink" title="3. 程序员"></a>3. 程序员</h4><p>变量：内存中专门用来存储数据的空间<br>程序: 处理数据的 接受数据–处理数据–输出数据 程序运行在内存中<br>数据：语言啊 阿拉伯数字</p>
@@ -828,7 +828,8 @@ xmlhttp<span class="token punctuation">.</span><span class="token function-varia
 </ol>
 <h4 id="25-jQuery-：js库"><a href="#25-jQuery-：js库" class="headerlink" title="25 jQuery ：js库"></a>25 jQuery ：js库</h4><p><strong>简化版的js</strong></p>
 <ol>
-<li>常用的选择器<table>
+<li><p>常用的选择器</p>
+<table>
 <thead>
 <tr>
 <th>css选择器</th>
@@ -902,6 +903,44 @@ xmlhttp<span class="token punctuation">.</span><span class="token function-varia
 <td>所有选中的复选框选项</td>
 </tr>
 </tbody></table>
+</li>
+<li><p>页面元素隐藏和显示的方法<br><code>hide(ms) show(ms) toggle(ms)</code><br><code>fadeOut() fadeIn() fadeToggle()</code> 淡入淡出<br><code>slideUp() slideDown() slideToggle()</code> 滑入滑出</p>
+</li>
+<li><p>Css()直接改样式没有过程</p>
+</li>
+<li><p><code>animate(cssObj,ms)</code>修改样式动画效果</p>
+</li>
+<li><p><code>stop()</code>停止当前动画</p>
+</li>
+<li><p>jQuery允许链式调用：允许你连续执行多个jq方法，会按照绑定次序一次执行</p>
+</li>
+<li><p>jQuery的callback(回调函数)</p>
+</li>
+<li><p><code>html()</code> <code>text()</code> <code>val()</code> <code>attr(&quot;src&quot;)</code></p>
+</li>
+<li><p><code>append()</code> <code>prepend()</code> :在元素的开头插入内容  <code>after()</code> <code>before()</code></p>
+</li>
+<li><p><code>remove()</code> <code>empty()</code></p>
+</li>
+<li><p><code>$(this)</code></p>
+</li>
+<li><p>遍历方法：</p>
+<ul>
+<li><code>parent()</code> 当前元素的直接父级</li>
+<li><code>parents()</code> …的所有父级</li>
+<li><code>parentsUntil()</code></li>
+<li><code>children(&quot;.box&quot;)</code> 找当前元素的直接子级（该子级元素叫”.box”）</li>
+<li><code>find(&quot;div)</code> 找当前元素的所有子级（叫”div”的子级）</li>
+<li><code>siblings()</code> 同胞，同级</li>
+<li><code>next()</code>  当前元素的下一个同胞元素</li>
+<li><code>nextAll()</code></li>
+<li><code>nextUntil()</code></li>
+<li><code>prev()</code></li>
+<li><code>prevAll()</code></li>
+<li><code>prevUntil()</code></li>
+</ul>
+</li>
+<li><p>jQuery ajax<br>跨域问题:<br>  浏览器的同源策略 同协议 同域名 同端口号<br>解决跨域：jsonp 请求代理</p>
 </li>
 </ol>
 
