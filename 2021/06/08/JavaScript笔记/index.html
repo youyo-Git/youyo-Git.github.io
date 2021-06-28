@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.1k
+                    6.8k
                 </div>
                 
 
@@ -943,6 +943,193 @@ xmlhttp<span class="token punctuation">.</span><span class="token function-varia
 <li><p>jQuery ajax<br>跨域问题:<br>  浏览器的同源策略 同协议 同域名 同端口号<br>解决跨域：jsonp 请求代理</p>
 </li>
 </ol>
+<h4 id="26-ES6"><a href="#26-ES6" class="headerlink" title="26 ES6"></a>26 ES6</h4><h5 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h5><ol>
+<li><p>let，const和var命令</p>
+<ul>
+<li>let声明的变量没有变量提升、不允许重复声明、只在块级作用域生效，<strong>暂时性死区</strong>：在一个块级作用域内，如果用let变量声明了某一个变量，那么该变量就自动绑定了该作用域，该作用域就形成了一个封闭的作用域</li>
+<li>const声明常量，不可重复声明</li>
+</ul>
+</li>
+<li><p>模板字符串</p>
+<ul>
+<li>模板字符串<code>``</code> 两个反引号，里面可以直接写变量，换行。变量要写在<code>$&#123;&#125;</code></li>
+</ul>
+</li>
+<li><p>扩展运算符</p>
+<ul>
+<li><code>...</code>可以将数组或者类数组结构拆分为参数序列，也可以拆分对象（拆完对象还要用｛｝包起来）<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arr  <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>z</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token operator">+</span>z<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//将数组作为参数序列传参</span>
+<span class="token function">sum</span><span class="token punctuation">(</span><span class="token operator">...</span>arr<span class="token punctuation">)</span><span class="token comment">//6</span>
+
+<span class="token comment">//对对象进行拆分再组装</span>
+<span class="token keyword">var</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">"小明"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> obj2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>score1<span class="token operator">:</span><span class="token number">100</span><span class="token punctuation">,</span>score2<span class="token operator">:</span><span class="token number">99</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token operator">...</span>obj1<span class="token punctuation">,</span><span class="token operator">...</span>obj2<span class="token punctuation">&#125;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>函数的拓展</p>
+<ul>
+<li>默认参数：直接给形参复制，带有默认参数的变量放后面，因为传参时有顺序<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">method</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span>y<span class="token operator">=</span><span class="token number">5</span></span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token operator">+</span>y<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">method</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token comment">//6</span>
+<span class="token function">method</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token comment">//4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>箭头函数：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">m</span><span class="token punctuation">)</span><span class="token operator">=></span><span class="token punctuation">&#123;</span><span class="token keyword">return</span> m<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> <span class="token function-variable function">fn1</span> <span class="token operator">=</span> <span class="token parameter">m</span> <span class="token operator">=></span> m<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+如果返回值是一个对象，对象外面要套括号，避免歧义<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token function-variable function">fn</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">"小明"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p><strong>箭头函数中的this指向不变，永远指向函数定义时所在的对象</strong><br>箭头函数不能作为构造函数（不能new），因为this指向不能改变</p>
+</li>
+<li><p>解构赋值：</p>
+<ul>
+<li>变量的解构赋值：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span><span class="token punctuation">[</span>b<span class="token punctuation">]</span><span class="token punctuation">,</span>c<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span> <span class="token comment">//1 2 3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li>对象的结构赋值<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">"小明"</span><span class="token punctuation">,</span>age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> <span class="token punctuation">&#123;</span>name<span class="token punctuation">,</span>age<span class="token punctuation">&#125;</span> <span class="token operator">=</span> obj
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>age<span class="token punctuation">)</span> <span class="token comment">//小明 18</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li>多层对象嵌套解构赋值：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>name<span class="token operator">:</span><span class="token string">"小明"</span><span class="token punctuation">,</span>
+age<span class="token operator">:</span><span class="token number">18</span><span class="token punctuation">,</span>
+hobby<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+   sport<span class="token operator">:</span><span class="token punctuation">&#123;</span>
+      basketball<span class="token operator">:</span><span class="token string">"篮球"</span>
+      <span class="token punctuation">&#125;</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+   move<span class="token operator">:</span><span class="token string">"钢铁侠"</span>
+<span class="token punctuation">&#125;</span>
+<span class="token comment">//解构出basketball</span>
+<span class="token keyword">let</span> <span class="token punctuation">&#123;</span>hobby<span class="token operator">:</span><span class="token punctuation">&#123;</span>sport<span class="token operator">:</span><span class="token punctuation">&#123;</span>basketball<span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span> <span class="token operator">=</span> obj
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>basketball<span class="token punctuation">)</span> <span class="token comment">//篮球</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+<li><p>对象的拓展：</p>
+<ul>
+<li>对象可以简写<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> name <span class="token operator">=</span> <span class="token string">"小明"</span>
+<span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">18</span>
+
+<span class="token keyword">let</span> obj1 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+   name<span class="token operator">:</span>name<span class="token punctuation">,</span>
+   age<span class="token operator">:</span>age<span class="token punctuation">,</span>
+   <span class="token function-variable function">method</span><span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token operator">...</span>
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token comment">//当对象的属性值是一个变量，并且该变量名跟属性名一样，那么可以简写成一个。</span>
+<span class="token comment">//函数可以省略function</span>
+<span class="token keyword">let</span> obj2 <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+   name<span class="token punctuation">,</span>
+   age
+   <span class="token function">method</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token operator">...</span>
+   <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="2-Symbol新的原始数据类型"><a href="#2-Symbol新的原始数据类型" class="headerlink" title="2 Symbol新的原始数据类型"></a>2 Symbol新的原始数据类型</h5></li>
+<li>symbol：类似于字符串，但是值永远独一无二的。</li>
+<li>可以解决给对象添加属性时导致原有属性被覆盖的问题</li>
+<li>可以传参做标记<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token function">Symbol</span><span class="token punctuation">(</span><span class="token string">"name"</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment">//Symbol(name)</span>
+<span class="token comment">//创建了一个symbol类型的变量a，标记为name</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+</li>
+</ol>
+<h5 id="3-Set-——类似于数组的一种数据结构"><a href="#3-Set-——类似于数组的一种数据结构" class="headerlink" title="3 Set ——类似于数组的一种数据结构"></a>3 Set ——类似于数组的一种数据结构</h5>   <pre class="line-numbers language-js" data-language="js"><code class="language-js">      <span class="token keyword">var</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+      <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token comment">//参数只能是一个数组</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token comment">//Set &#123; 1, 3, 2 &#125;</span>
+
+      <span class="token comment">//循环</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">of</span> set<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token comment">//1   3   2</span>
+      <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> en <span class="token keyword">of</span> a<span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>en<span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token comment">// [ 1, 1 ]</span>
+      <span class="token comment">// [ 3, 3 ]</span>
+      <span class="token comment">// [ 2, 2 ]</span>
+Waiting <span class="token keyword">for</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>set数据结构的值都是唯一的</li>
+<li>set的一些方法：<ul>
+<li>add()</li>
+<li>delete()</li>
+<li>has()</li>
+<li>size()</li>
+<li>keys() 遍历属性名</li>
+<li>values() 遍历属性值</li>
+<li>entries() 遍历属性名和属性值</li>
+</ul>
+</li>
+</ul>
+<h5 id="4-Map-——类似于对象的一种数据结构"><a href="#4-Map-——类似于对象的一种数据结构" class="headerlink" title="4 Map ——类似于对象的一种数据结构"></a>4 Map ——类似于对象的一种数据结构</h5><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> map <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'name'</span><span class="token punctuation">,</span><span class="token string">'小明'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">18</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">567</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>   一对   值—值</p>
+<ul>
+<li>Map的属性名不限于字符串，可以使任何类型</li>
+<li><code>set(&quot;属性名&quot;,&quot;属性值&quot;)</code></li>
+<li><code>get(&quot;属性名&quot;)</code> 取值</li>
+<li><code>has(&quot;属性名&quot;)</code></li>
+<li><code>delete(&quot;属性名&quot;)</code></li>
+<li><code>clear(属性名)</code></li>
+<li><code>size()</code></li>
+<li>keys() 遍历属性名</li>
+<li>values() 遍历属性值</li>
+<li>entries() 遍历属性名和属性值</li>
+</ul>
+<h5 id="5-Promise"><a href="#5-Promise" class="headerlink" title="5 Promise"></a>5 Promise</h5><p>   优雅的异步编程解决方案，普通的异步编程会产生回调地域问题<br>   异步编程： ajax 定时器<br>   then()方法返回的是一个全新的promise实例<br>   —–待更新——</p>
+<h5 id="6-async-await函数："><a href="#6-async-await函数：" class="headerlink" title="6 async await函数："></a>6 async await函数：</h5><ol>
+<li>async 是“异步”的简写，而 await 可以认为是 async wait 的简写。所以应该很好理<br>解 async 用于声明一个 function 是异步的，而 await 用于等待一个异步方法执行完成。</li>
+<li>一般来说，都认为 await 是在等待一个 async 函数完成。不过按语法说明，<br><font color="red">await等待的是一个表达式，这个表达式的计算结果是 Promise 对象或者其它值</font><br>（换句话说，就是没有特殊限定）。</li>
+<li>因为 async 函数返回一个 Promise 对象，所以 await 可以用于等待一个 async 函数<br>的返回值——这也可以说是 await 在等 async 函数，但要清楚，它等的实际是一个返回<br>值。注意到 await 不仅仅用于等 Promise 对象，它可以等任意表达式的结果，所以，<br>await 后面实际是可以接普通函数调用或者直接量的。所以下面这个示例完全可以正确运行<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">getSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+   <span class="token keyword">return</span> <span class="token string">"something"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">testAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"hello async"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">const</span> v1 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">const</span> v2 <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">testAsync</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>v1<span class="token punctuation">,</span>v2<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>await 等到了它要等的东西，一个 Promise 对象，或者其它值，然后呢？我不得不先说，<br>await 是个运算符，用于组成表达式，await 表达式的运算结果取决于它等的东西。<br>如果它等到的不是一个 Promise 对象，那 await 表达式的运算结果就是它等到的东西。<br>如果它等到的是一个 Promise 对象，await 就忙起来了，它会阻塞后面的代码，等着<br>Promise 对象 resolve，然后得到 resolve 的值，作为 await 表达式的运算结果。</li>
+</ol>
+<p>   <font color="red">案例</font><br>   <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+   <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span>reject</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span>
+         <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"haha"</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span><span class="token number">2000</span><span class="token punctuation">)</span>
+   <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+   <span class="token keyword">return</span> a
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+   <span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"执行"</span><span class="token punctuation">,</span>b<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">fn2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h5 id="7-模块化-module"><a href="#7-模块化-module" class="headerlink" title="7 模块化 module"></a>7 模块化 module</h5><ul>
+<li>语法：<br>a.js文件<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">1</span>  <span class="token comment">// 可以导出任何的变量声明语句或者函数声明语句(一定是一个完整的声明语句)</span>
+<span class="token keyword">export</span> <span class="token punctuation">&#123;</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>fn<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+b.js文件<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">,</span>fn<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"./a.js"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>改名字：<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span>a <span class="token keyword">as</span> b<span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">"a.js"</span> <span class="token comment">//从a.js文件中导入a变量并改名为b</span>
+<span class="token keyword">export</span> <span class="token punctuation">&#123;</span>c <span class="token keyword">as</span> cc<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><strong>默认导出</strong>：从前面的例子可以看出，使用import命令的时候，用户需要知道所要加载<br>的变量名或函数名，否则无法加载。但是，用户肯定希望快速上手，未必愿意阅读文档，去<br>了解模块有哪些属性和方法，所以有了默认导出。<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> a <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+</ul>
+<p>   <strong>一个文件只能有一个默认导出</strong>,引入的时候不需要加大括号</p>
+<ul>
+<li>整体引入<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> <span class="token string">"./common.css"</span>
+<span class="token keyword">import</span> <span class="token string">"./../js/main.js"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+</ul>
 
                 
             </div>
