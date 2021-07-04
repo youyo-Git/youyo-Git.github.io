@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.8k
+                    6.9k
                 </div>
                 
 
@@ -531,16 +531,18 @@
 <li><code>typeof()</code>:用来检测数据类型</li>
 <li><font color='cornflowerblue'>面试题（例题）</font><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">3</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token punctuation">(</span>n<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">++</span>n<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span>n<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">//           (4       4        5) 打印出来13 </span>
+<span class="token comment">//           (3       5        5) 打印出来13 </span>
+        <span class="token comment">//n = 4       5        6</span>
 cosole<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span>
-<span class="token comment">//n是等于6的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token comment">//n是等于6的</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <h4 id="8-语句"><a href="#8-语句" class="headerlink" title="8. 语句"></a>8. 语句</h4><p>if else 可以进行多重条件判断<br>if(条件){条件成立时候执行的代码}else{条件不成立时候执行的代码 }<br>以下六种情况都算false<br><code>false</code> <code>0</code> <code>undefined</code> <code>null</code> <code>&quot;&quot;</code> <code>NaN</code>。<br><font color='cornflowerblue'>三元运算符：主要返回值，可以直接给其他变量赋值</font><br><font color='cornflowerblue'><code>if else</code> ：不能给直接给其他变量赋值，但是可以进行其他更多的操作</font></p>
-<h4 id="9-隐式类型转换"><a href="#9-隐式类型转换" class="headerlink" title="9. 隐式类型转换"></a>9. 隐式类型转换</h4><p>js中的数据会根据具体情况自动改变数据的类型。<br><font color='cornflowerblue'><br>string + 其他类型：转换为字符串<br>Boolean + number: 转换为 number<br>number + undefined: 转换为 NaN  <strong>Nan不是数据类型，是个结果，表示算不出来</strong><br></font></p>
-<h4 id="10-函数和方法"><a href="#10-函数和方法" class="headerlink" title="10. 函数和方法"></a>10. 函数和方法</h4><p><strong>什么情况下用函数</strong>：如果一段代码要反复调用，那么就考虑封装成函数了<br>封装一段执行专门任务的代码段。<br><strong>函数是不调用不执行的</strong><br>两种函数创建的方法：<br>方法一：</p>
+<h4 id="9-隐式类型转换"><a href="#9-隐式类型转换" class="headerlink" title="9. 隐式类型转换"></a>9. 隐式类型转换</h4><p>js中的数据会根据具体情况自动改变数据的类型。<br><font color='cornflowerblue'><br>string + 其他类型：转换为字符串<br>Boolean + number: 转换为 number<br>number + undefined: 转换为 NaN  <strong>Nan不是数据类型，是个结果，表示算不出来</strong><br>number + null: 转换为number<br>null + boolean: 转换为number<br></font></p>
+<h4 id="10-函数和方法"><a href="#10-函数和方法" class="headerlink" title="10. 函数和方法"></a>10. 函数和方法</h4><p><strong>什么情况下用函数</strong>：如果一段代码要反复调用，那么就考虑封装成函数了<br>封装一段执行专门任务的代码段。<br><strong>函数是不调用不执行的</strong><br>两种函数创建的方法：<br>方法一：函数声明方式</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">函数名</span><span class="token punctuation">(</span><span class="token parameter">参数</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    代码段<span class="token comment">//想干的事</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>方法二：函数字面量</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> <span class="token function-variable function">函数名</span><span class="token operator">=</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">参数</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
    代码段
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -637,17 +639,27 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>toUpperCase(转大写)</li>
 <li>toLowerCase(转小写)</li>
 <li>substring(截取子字符串) 含头不含尾如果只给一个参数，代表从哪一位开始截取，截到最后</li>
-<li>slice()同上</li>
-<li>indexOf(查找关键字) 关键字符的角标 找到就结束 找不到返回-1</li>
+<li>slice()同上  slice和substring都是含头不含尾，slice还可以截取数组（不改变原数组）</li>
+<li>indexOf(查找关键字) 返回关键字符的角标，找到就结束 找不到返回-1</li>
 <li>toString(转成字符串)</li>
 <li>split(切割符) 可以把字符串切割成数组 一定会切成数组</li>
 </ul>
 <h5 id="16-2-Number对象"><a href="#16-2-Number对象" class="headerlink" title="16.2 Number对象"></a>16.2 Number对象</h5><ul>
-<li>toString(转成字符串)</li>
-<li>toFixed()按几位小数四舍五入取整</li>
+<li>toString(转成字符串)<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//将number转换为字符串</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token number">10</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//10 (10进制字符串)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//1010(2进制字符串)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//12（8进制字符串）</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//a(16进制字符串)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>toFixed()按几位小数四舍五入取整<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token number">19.2356</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//19</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//19.24</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//19.236</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h5 id="16-3-Boolean对象"><a href="#16-3-Boolean对象" class="headerlink" title="16.3 Boolean对象"></a>16.3 Boolean对象</h5><ul>
-<li>toString(转成字符串)</li>
+<li>toString(转成字符串)<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token boolean">true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">//boolean</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">//true （字符串）</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h5 id="16-4-Array对象"><a href="#16-4-Array对象" class="headerlink" title="16.4 Array对象"></a>16.4 Array对象</h5><ul>
 <li>toString(转成字符串)</li>
@@ -1371,18 +1383,17 @@ b.js文件<pre class="line-numbers language-js" data-language="js"><code class="
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/06/08/JavaScript%E7%AC%94%E8%AE%B0/">
+                <a href="/2021/07/04/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript学习笔记">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Vue学习笔记">
                         
-                        <span class="card-title">JavaScript学习笔记</span>
+                        <span class="card-title">Vue学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1392,9 +1403,9 @@ b.js文件<pre class="line-numbers language-js" data-language="js"><code class="
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-08
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1407,7 +1418,6 @@ b.js文件<pre class="line-numbers language-js" data-language="js"><code class="
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
