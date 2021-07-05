@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6.9k
+                    7k
                 </div>
                 
 
@@ -641,7 +641,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>substring(截取子字符串) 含头不含尾如果只给一个参数，代表从哪一位开始截取，截到最后</li>
 <li>slice()同上  slice和substring都是含头不含尾，slice还可以截取数组（不改变原数组）</li>
 <li>indexOf(查找关键字) 返回关键字符的角标，找到就结束 找不到返回-1</li>
-<li>toString(转成字符串)</li>
+<li>toString(转成字符串): <strong>意义何在？</strong></li>
 <li>split(切割符) 可以把字符串切割成数组 一定会切成数组</li>
 </ul>
 <h5 id="16-2-Number对象"><a href="#16-2-Number对象" class="headerlink" title="16.2 Number对象"></a>16.2 Number对象</h5><ul>
@@ -813,9 +813,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>返回一个全新的对象 return u</li>
 </ol>
 <p>   <strong>共有属性</strong> ： 由统一构造函数创建出来的对象的共享有的属性<br>   <strong>自有属性</strong> ： 属于对象实例的私有方法<br>   <strong>任何对象没有权利修改原型的属性</strong><br>   <strong>继承</strong> ： 使用现有的类型，创建出新的类型，新的类型可以使用现有类型的属性和方法，也可以拓展出现有类型没有的属性和方法</p>
-<h4 id="22-原型链"><a href="#22-原型链" class="headerlink" title="22 原型链?"></a>22 原型链?</h4><p>   <code>Function</code> : 代表的是所有函数的父类<br>   <code>__proto__</code>: 隐式原型。任何一个对象都有饮食原型，用来实现继承的一个对象的影视原型默认指向创建该对象的构造函数的原型对象</p>
-<h4 id="23-绑定事件的第三种方式"><a href="#23-绑定事件的第三种方式" class="headerlink" title="23 绑定事件的第三种方式"></a>23 绑定事件的第三种方式</h4><p>   元素对象.addEventListener(“事件名”,方法对象,是否在补货阶段触发)</p>
-<h4 id="24-事件触发周期"><a href="#24-事件触发周期" class="headerlink" title="24 事件触发周期?"></a>24 事件触发周期?</h4><p>   事件捕获（外–里）–目标触发–事件冒泡（里–外）<br>   事件对象：默认在事件触发的时候自动传入函数的第一个参数，与生俱来的，不是后天来的<br>   阻止冒泡：<code>e.stopPropagation</code>()<br>   事件委托：利用冒泡<br>   事件源对象：<code>e.target</code></p>
+<h4 id="22-原型链"><a href="#22-原型链" class="headerlink" title="22 原型链?"></a>22 原型链?</h4><p>   <code>Function</code> : 代表的是所有函数的父类<br>   <code>__proto__</code>: 隐式原型。任何一个对象都有隐式原型，用来实现继承的一个对象的隐式原型默认指向创建该对象的构造函数的原型对象</p>
+<h4 id="23-绑定事件的第三种方式"><a href="#23-绑定事件的第三种方式" class="headerlink" title="23 绑定事件的第三种方式"></a>23 绑定事件的第三种方式</h4><p>   元素对象.addEventListener(“事件名”,方法对象,是否在捕获阶段触发)</p>
+<h4 id="24-事件触发周期-（有空好好了解）"><a href="#24-事件触发周期-（有空好好了解）" class="headerlink" title="24 事件触发周期?（有空好好了解）"></a>24 事件触发周期?（有空好好了解）</h4><p>   事件捕获（外–里）–目标触发–事件冒泡（里–外）<br>   事件对象：默认在事件触发的时候自动传入函数作为第一个参数（与生俱来的，不是后天来的）<br>   阻止冒泡：<code>e.stopPropagation</code>()<br>   事件委托：利用冒泡<br>   事件源对象：<code>e.target</code></p>
 <h4 id="25-Ajax"><a href="#25-Ajax" class="headerlink" title="25 Ajax"></a>25 Ajax</h4><p>   <strong>前端向后端异步取数据而无需刷新页面技术</strong></p>
 <ol>
 <li>使用ajax的步骤<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//1. 创建ajax核心对象</span>
@@ -905,12 +905,12 @@ xmlhttp<span class="token punctuation">.</span><span class="token function-varia
 <td>所有禁用的元素</td>
 </tr>
 <tr>
-<td><code>selected</code></td>
+<td><code>:selected</code></td>
 <td><code>$(&quot;:selected&quot;)</code></td>
 <td>所有选定的下拉元素</td>
 </tr>
 <tr>
-<td><code>：checked</code></td>
+<td><code>:checked</code></td>
 <td><code>$(&quot;:checked&quot;)</code></td>
 <td>所有选中的复选框选项</td>
 </tr>
@@ -930,7 +930,7 @@ xmlhttp<span class="token punctuation">.</span><span class="token function-varia
 </li>
 <li><p><code>html()</code> <code>text()</code> <code>val()</code> <code>attr(&quot;src&quot;)</code></p>
 </li>
-<li><p><code>append()</code> <code>prepend()</code> :在元素的开头插入内容  <code>after()</code> <code>before()</code></p>
+<li><p><code>append()</code> <code>prepend()</code> :在元素的(内部)开头插入内容  <code>after()</code> <code>before()</code>:在元素的开头（紧挨着的外部）插入内容</p>
 </li>
 <li><p><code>remove()</code> <code>empty()</code></p>
 </li>
