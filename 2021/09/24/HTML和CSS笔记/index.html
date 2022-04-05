@@ -1,0 +1,1586 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="JavaScript学习笔记, Hexo">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>JavaScript学习笔记 | Hexo</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Hexo</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Hexo</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">JavaScript学习笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%80%BB%E7%BB%93/">
+                                <span class="chip bg-color">总结</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                学习
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-09-24
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.5k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="1-互联网行业"><a href="#1-互联网行业" class="headerlink" title="1. 互联网行业"></a>1. 互联网行业</h4><p>圆形图</p>
+<ol>
+<li>产品经理 ：提需求的</li>
+<li>UI设计师 ：把产品经理的线框图 转化为设计稿</li>
+<li>前端开发工程师 实现为一个真正的程序 跟浏览器打交道的</li>
+<li>后端开发工程师 操作数据的 跟服务器打交道的</li>
+<li>测试 工程师 找bug的</li>
+<li>运维工程师 项目上线的维护</li>
+</ol>
+<p>​     ios开发工程师<br>​      安卓开发工程师</p>
+<h4 id="2-我们的工作范畴"><a href="#2-我们的工作范畴" class="headerlink" title="2. 我们的工作范畴"></a>2. 我们的工作范畴</h4><p>pc端：<br>    网站：电商网站 企业站<br>    后台管理系统：互联网办公的<br>移动端：<br>    app:ios开发工程师和安卓开发工程师<br>    小程序：<br>    h5：web app</p>
+<h4 id="3-世界上五大浏览器"><a href="#3-世界上五大浏览器" class="headerlink" title="3. 世界上五大浏览器"></a>3. 世界上五大浏览器</h4><ol>
+<li>chrome(谷歌)</li>
+<li>firefox(火狐)</li>
+<li>IE Safari(苹果)</li>
+<li>opera(欧鹏)</li>
+</ol>
+<h5 id="代码编辑器"><a href="#代码编辑器" class="headerlink" title="代码编辑器"></a>代码编辑器</h5><ol>
+<li>vscode</li>
+<li>Hbuilder</li>
+</ol>
+<h5 id="html-css"><a href="#html-css" class="headerlink" title="html css"></a>html css</h5><p>html:负责网页结构的<br>css:负责网页样式的<br>html:由标签组成<br>单标签：没有内容<br>双标签：开始标签和结束标签 可以放内容的<br>所有写在元素开始标签之中的都是该标签的属性</p>
+<pre class="line-numbers language-txt" data-language="txt"><code class="language-txt">&lt;!DOCTYPE html&gt;：用来声明文档类型
+&lt;html&gt;&lt;&#x2F;html&gt; 代表了整个网页
+&lt;head&gt;&lt;&#x2F;head&gt;用来写网页的一些配置信息
+&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt; 声明文档的编码格式
+&lt;title&gt;&lt;&#x2F;title&gt; 负责网页标题
+&lt;body&gt;&lt;&#x2F;body&gt;负责网页内容<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>格式：标签换行， 开始标签和结束标签要对齐（一条竖线）<br>子父级之间相差一个tab键</p>
+<h3 id="网页布局"><a href="#网页布局" class="headerlink" title="网页布局"></a>网页布局</h3><h4 id="1-画块"><a href="#1-画块" class="headerlink" title="1. 画块"></a>1. 画块</h4><p>div</p>
+<h4 id="2-给元素-标签加样式"><a href="#2-给元素-标签加样式" class="headerlink" title="2. 给元素/标签加样式"></a>2. 给元素/标签加样式</h4><ol>
+<li><p>内联/行内样式：写在元素开始标签里面的方式</p>
+</li>
+<li><p>内部样式：写在head里的style标签里 需要大括号包裹<br>class属性：可以重命名<br>class命名规范：不能用中文，不能用特殊符号（除了_-）不能用纯数字 不能以数字打<br>头，不能用大写字母，不能有空格 见名知意<br>id：不能重名</p>
+</li>
+<li><p>外部样式<br><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;1.css&quot;/&gt;</code><br>href后面跟的是路径<br>绝对路径：不需要参照物 <a target="_blank" rel="noopener" href="http://www.baidu.com/">http://www.baidu.com</a><br>相对路径：有参照物的,参照的是当前文件</p>
+</li>
+<li><p>样式的优先级<br>!important&gt;内联样式&gt;内部样式(id&gt;class&gt;标签名)(后&gt;前)<br>10000     1000           100  10    1</p>
+<p>内部样式=外部样式</p>
+</li>
+</ol>
+<h4 id="3-改变元素位置"><a href="#3-改变元素位置" class="headerlink" title="3. 改变元素位置"></a>3. 改变元素位置</h4><ol>
+<li>margin(外边距)：<font color='orange'>值可以给负数</font><br>问题：<br>（1） margin塌陷：子父级之间，顶部想隔开距离，给子集加margin-top会发生<br>塌陷，也就是这个margin会加在父级身上，导致父级整体往下移（浮动元素除外）<br>（2）margin合并：在垂直方向上，同级，临边margin会合并为一个，取较大值</li>
+<li>padding(内边距)<br>问题：<br>会自动的增宽或者增高，所以我们要主动的减去对应的宽高</li>
+<li>position(定位)  <font color='cornflowerblue'>更改层叠顺序，<code>z-index</code>只能定位元素使用</font><br>（1） absolute(绝对定位)：想改变谁的位置，就给谁加绝对定位，需要给top left right<br>bottom，绝对定位的元素默认参照的是已定位的<strong>父级</strong>元素，就近<br>（2） realtive（相对定位）:想以谁当作参照，就给谁加相对定位</li>
+</ol>
+<h4 id="4-元素的默认宽高"><a href="#4-元素的默认宽高" class="headerlink" title="4. 元素的默认宽高"></a>4. 元素的默认宽高</h4><ol>
+<li><p>默认宽度：父级的百分百<br>浮动元素默认宽度由子集决定</p>
+</li>
+<li><p>默认高度由子集高度+padding决定</p>
+<p><font color='orange'>直接设置宽度应该不要大于1200px</font></p>
+</li>
+</ol>
+<h4 id="5-元素"><a href="#5-元素" class="headerlink" title="5. 元素"></a>5. 元素</h4><ol>
+<li>块元素：div ul li h1-h6(标题标签) p(段落标签)<br>table(表格) rowspan(占几行) colspan(占几列)<br>（1）独占一行<br>（2）有宽高</li>
+<li>内联/行内元素：span a(超链接) img(图片标签)   <font color='cornflowerblue'>内联元素有margin和padding，但只有左右生效</font><br>input的属性 placeholder(占位符) value(值) type(类型) name(给服务器用的名字)<br>button<br>（1）不独占一行的，当父级容不下的时候会换行<br>（2）内联元素没有宽高<br>元素的嵌套：块元素可以包含块和内联元素，内联元素里只能放内联元素</li>
+</ol>
+<h4 id="5-浮动"><a href="#5-浮动" class="headerlink" title="5. 浮动"></a>5. 浮动</h4><p><strong>可以让元素在一行上显示</strong><br>希望哪几个元素在一行上显示，那么就给哪几个元素加浮动<br><strong>float:left/right</strong><br>问题：脱离文档流不占位置<br>解决：在浮动的元素元素后面添加一个元素，样式为clear：both<br><strong>clear:both</strong> 需要放在所有浮动元素之后，并且是同级关系。页面中有几处浮动，那么<br>就需要清除几次</p>
+<h4 id="6-划块原则"><a href="#6-划块原则" class="headerlink" title="6. 划块原则"></a>6. 划块原则</h4><p>从大到小，依次划分<br><strong>同级元素不能既在一行上，又在一列上</strong><br>所以：清除浮动的元素一定是作为该层级的最后一个元素</p>
+<p><font color='orange'>对于不规则的样式，先想成规则的再仔细观察，合理使用负数值。</font></p>
+<h4 id="7-css选择器"><a href="#7-css选择器" class="headerlink" title="7.css选择器"></a>7.css选择器</h4><ol>
+<li>#id</li>
+<li>.class</li>
+<li>tag(标签)<br>同时找多个，中间用逗号，如  <code>.class1, .class2, .class3&#123;...&#125;</code><br>找子级中间用空格，如找nav下子级class1 <code>.nav .class1</code><br>找直接子级中间用&gt;隔开，如找nav下直接子集class1 <code>.nav&gt;.class1</code></li>
+</ol>
+<p><font color='cornflowerblue'>+，:first-child</font></p>
+<h4 id="8-display"><a href="#8-display" class="headerlink" title="8. display"></a>8. display</h4><ol>
+<li>block：转为块元素</li>
+<li>inline：转为内联元素</li>
+<li>inline-block：转为内联块，相当于不独占一行的块级元素</li>
+<li>none：无</li>
+</ol>
+<h4 id="9-文字样式"><a href="#9-文字样式" class="headerlink" title="9. 文字样式"></a>9. 文字样式</h4><ol>
+<li><p><code>text-align: center</code> 文本对齐方式，让文本居包含文本的这个块的中间<br> 某元素加了文字样式，那么对它里面的文字生效  <font color='cornflowerblue'>对内联元素也生效</font></p>
+</li>
+<li><p><code>color: #ff6637</code>  文字颜色</p>
+</li>
+<li><p><code>font-family:</code> 宋体  文字字体</p>
+</li>
+<li><p><code>font-size: 16px</code> 文字大小</p>
+</li>
+<li><p><code>font-weight: bold</code> 文字粗细</p>
+</li>
+<li><p><code>line-height: 100px</code> 垂直居中：只需要把行高设置为跟外层div高度一致即可<br> 任何文字样式都是可继承的</p>
+</li>
+<li><p><code>text-indent: 2em</code> 首行缩进2个文字大小</p>
+</li>
+</ol>
+<p>  <font color='cornflowerblue'>文字有自带的行高</font></p>
+<h4 id="10-居中"><a href="#10-居中" class="headerlink" title="10. 居中"></a>10. 居中</h4><p><strong>任何情况下不要拿显示器边缘当参照</strong></p>
+<ol>
+<li>auto：自动计算剩余空间<br><code>margin: auto</code> 给<strong>块</strong>做居中，前提必须得有宽度，<font color='orange'>用了定位无法用margin：auto</font></li>
+<li><font color='cornflowerblue'>定位百分比+margin负数</font></li>
+<li>定位百分比+transform:translate(-50%,-50%)</li>
+</ol>
+<h4 id="11-伪类"><a href="#11-伪类" class="headerlink" title="11. 伪类"></a>11. 伪类</h4><p>元素：hover{鼠标滑过后的样式} 如下<em>鼠标滑过li元素 则改变背景和字体颜色</em></p>
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token selector">.nav li:hover</span><span class="token punctuation">&#123;</span><span class="token property">background</span><span class="token punctuation">:</span> #5696ff<span class="token punctuation">;</span><span class="token property">color</span><span class="token punctuation">:</span> #fefeff<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><font color='orange'>:hover修饰li（相当于 li:hover是一个整体），选择器用法不变</font></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+        <span class="token selector">.par</span><span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token selector">.child</span><span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> pink<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token selector">.par>.child>.child</span><span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span><span class="token property">background</span><span class="token punctuation">:</span> brown<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token selector">.btn</span><span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token selector">.par:hover+.btn</span><span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span> <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        <span class="token comment">/* .par:hover .child&#123;border: 5px solid black;&#125; */</span>   <span class="token comment">/*所有子集变样式*/</span>
+        <span class="token selector">.par:hover>.child</span><span class="token punctuation">&#123;</span><span class="token property">border</span><span class="token punctuation">:</span> 5px solid black<span class="token punctuation">&#125;</span>          <span class="token comment">/*直接子集变样式*/</span>
+        <span class="token selector">#cl:hover</span><span class="token punctuation">&#123;</span><span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+        
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>par<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>child<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>cl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>child<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="12-文字样式"><a href="#12-文字样式" class="headerlink" title="12. 文字样式"></a>12. 文字样式</h4><p>font-weight（字体加粗） color（文字颜色） font-size（字体大小） text-align（水平对齐<br>方式） line-height（垂直对齐方式） font-family（字体类型）</p>
+<h4 id="13-a标签"><a href="#13-a标签" class="headerlink" title="13. a标签"></a>13. a标签</h4><p><code>&lt;a href=&quot;&quot; target=&quot;&quot;&gt;</code></p>
+<ol>
+<li><p><code>target=&quot;_blank&quot;</code> 代表在新标签页打开，默认为<code>_self</code>,在当前窗口刷新</p>
+</li>
+<li><p>href=”路径” 可以是绝对路径也可以是相对路径</p>
+<p><font color='orange'>去掉下划线：<code>text-decoration: none</code></font></p>
+<p><font color='orange'>underline</font></p>
+<p><font color='orange'>overline</font></p>
+<p><font color='orange'>line-through: 中划线</font></p>
+</li>
+</ol>
+<h4 id="14-引入图片的两种方式"><a href="#14-引入图片的两种方式" class="headerlink" title="14. 引入图片的两种方式"></a>14. 引入图片的两种方式</h4><ol>
+<li>img标签直接引入<font color='cornflowerblue'>图片默认底对齐方式，以底部为基线；<code>vertical-align: middle</code> 中间线对齐，仅针对内联元素</font></li>
+<li>通过背景图方式引入<br><strong>什么时候用背景图方式引入:</strong><ol>
+<li>如果图片可能超出显示器尺寸的时候，选择用背景图</li>
+<li>如果图片里面还有内容，需要继续编辑，选择用背景图</li>
+<li>其他情况推荐使用img标签</li>
+</ol>
+</li>
+</ol>
+<h4 id="15-描边、圆角、半透明"><a href="#15-描边、圆角、半透明" class="headerlink" title="15. 描边、圆角、半透明"></a>15. 描边、圆角、半透明</h4><ol>
+<li><p>border: chocolate(颜色) 2px(粗细) solid/dashed(直线/虚线)<font color='cornflowerblue'>描边默认在外边，<code>box-sizing: border-box</code>将描边加在里边</font></p>
+</li>
+<li><p>border-radius 1px(圆角) <font color='cornflowerblue'>最大只有宽高的一半，圆或者椭圆</font></p>
+</li>
+<li><p>opacity:0.5 半透明 会导致元素<strong>里面的内容也变成半透明</strong> <font color='cornflowerblue'>值在0~1之间</font></p>
+</li>
+<li><p>background-color:rgba(51,51,51,0.5) <strong>不会</strong>导致里面内容也变成半透明 rgba中最后一个参数的范围为0~1</p>
+<p><font color='cornflowerblue'>搜索框去蓝边，<code>outline: none</code></font></p>
+</li>
+</ol>
+<h4 id="16-小demo-实现二级下拉菜单"><a href="#16-小demo-实现二级下拉菜单" class="headerlink" title="16. 小demo 实现二级下拉菜单"></a>16. 小demo 实现二级下拉菜单</h4><p>鼠标滑过一个元素改另一个元素的样式<br>鼠标要滑过的元素:hover 要更改样式的元素{}<br>注意：要更改的元素必须是鼠标滑过的元素<strong>子集</strong></p>
+<h4 id="17-投影"><a href="#17-投影" class="headerlink" title="17. 投影"></a>17. 投影</h4><p>box-shodow：水平偏移距离 垂直偏移距离 模糊程度 投影大小 投影颜色  <font color='orange'>投影不占位置<br>box-shadow不要上边框，可以用上面元素来覆盖该元素（已定位，用z-index层叠）的上边框<br></font></p>
+<h4 id="18-清除浮动的方式总结（四种）"><a href="#18-清除浮动的方式总结（四种）" class="headerlink" title="18. 清除浮动的方式总结（四种）"></a>18. 清除浮动的方式总结（四种）</h4><ol>
+<li>clear:both 不做详细描述</li>
+<li>使用css的overflow属性，给浮动元素的容器添加overflow:hidden;或overflow:auto;可以清除浮动   <font color='cornflowerblue'><code>overflow:hidden</code>子集超过父级部分隐藏，<code>overflow: auto</code>自动不超出父级，并给个滚动条能够完全展示子集内容，<code>overflow-x: scroll</code>主动增加（横向）滚动条，</font></li>
+<li>给浮动的元素的容器添加浮动</li>
+<li>使用CSS的:after伪元素<br> 注意这不是伪类，而是<strong>伪元素</strong>，代表一个元素之后最近的元素。如下<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf‐8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.yellow</span><span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 800px<span class="token punctuation">;</span><span class="token property">background</span><span class="token punctuation">:</span> yellow<span class="token punctuation">&#125;</span>
+    <span class="token selector">.red</span><span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span><span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+    <span class="token selector">.blue</span><span class="token punctuation">&#123;</span><span class="token property">width</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span><span class="token property">height</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span><span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span><span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span><span class="token punctuation">&#125;</span>
+    <span class="token selector">.yellow:after</span><span class="token punctuation">&#123;</span><span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span> 
+        <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>yellow<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>red<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>blue<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ol>
+<h4 id="19-不会发生margin塌陷的几种情况"><a href="#19-不会发生margin塌陷的几种情况" class="headerlink" title="19.  不会发生margin塌陷的几种情况"></a>19.  不会发生margin塌陷的几种情况</h4><ol>
+<li><p>为父盒子设置border，为外层添加border后父子盒子就不是真正意义上的贴合 （可以设置成透明：border：1px solid transparent）。<font color='cornflowerblue'>准确来说就是加border-top,加左右是不会影响的，并且可以让边框透明，这样就看不出来了，transparent；</font></p>
+</li>
+<li><p>为父盒子添加overflow：hidden；<font color='cornflowerblue'>不推荐</font></p>
+</li>
+<li><p>为父盒子设定padding值；   <font color='cornflowerblue'>直接设置padding解决塌陷最好</font></p>
+</li>
+<li><p>为父盒子添加position：fixed；<font color='cornflowerblue'>不推荐</font></p>
+</li>
+<li><p>利用伪元素给子元素的前面添加一个空元素  （暂时不看，笔记有误）</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">.son:before&#123; content:"";
+ overflow:hidden;&#125; <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre></li>
+<li><p>子元素浮动也不会塌陷；<font color='cornflowerblue'>给父级加浮动也可以实现但副作用很大</font></p>
+</li>
+</ol>
+<h4 id="20-百分比问题"><a href="#20-百分比问题" class="headerlink" title="20. 百分比问题"></a>20. 百分比问题</h4><p>百分比数参照物<br>父元素宽度：padding，margin，width<br>父元素高度：height 如父元素为body不生效<br>自身：border-radius<br>已定位的父级:position:</p>
+<h4 id="21-css中的单位"><a href="#21-css中的单位" class="headerlink" title="21. css中的单位"></a>21. css中的单位</h4><p>px<br>em: 1em等于一个文字所占大小<br>rem: 1rem等于<strong>根元素</strong>(html)一个文字所占大小(重要单位，响应式布局)</p>
+<p><font color='cornflowerblue'>百分比：相对于父级元素</font>，<font color='orange'>body的height不能直接获取，需要能直接获取height的父级</font></p>
+<p><font color='cornflowerblue'>vh: 把显示器的高100等分，1vh就是1份那么大 </font></p>
+<p><font color='cornflowerblue'>vw：把显示器的宽100等分</font></p>
+<h4 id="22-表单"><a href="#22-表单" class="headerlink" title="22. 表单"></a>22. 表单</h4><p><font color='cornflowerblue'>内联块，input: value，type， placehoder</font></p>
+<p><font color='cornflowerblue'>radio: 单选框，checkbox:复选框，select option：下拉选择框</font><font color='orange'>是一系列需要用相同的name</font></p>
+<p><font color='cornflowerblue'>文字强制不换行：white-space:nowrap</font>, 比如人名不能换行。</p>
+<hr>
+<h3 id="HTML-CSS3"><a href="#HTML-CSS3" class="headerlink" title="HTML  CSS3"></a>HTML  CSS3</h3><ol>
+<li><p>video</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>320<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>240<span class="token punctuation">"</span></span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>movie.mp4<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>属性：controls视频播放控件（进度、音量、全屏、播放）</p>
+<pre><code>       autoplay 自动播放
+       loop 循环播放
+</code></pre>
+ <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>music.mp3<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>video/mp3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<li><p>html语义化</p>
+<pre><code>header footer nav aside   &lt;font color=&#39;cornflowerblue&#39;&gt;语义元素&lt;/font&gt;
+</code></pre>
+</li>
+</ol>
+<p>css3<br>       tranform(转换) 2d<br>           rotate:旋转  单位deg（度）<font color='cornflowerblue'>标签都能旋转</font><br>           translate:偏移 针对你<strong>当前位置</strong>的基础上<br>           skew:倾斜<br>           scale:缩放 物理缩放 <em>不占位置 不影响结构</em> <font color='cornflowerblue'>同时也会影响里面的结构</font><br>    transform 3d<br>           rotateX<br>           rotateY<br>    transition：过渡 让样式的变化有一个过程(动画)<br>           animation:动画<br>    响应式布局的<br>    @media screen</p>
+<h4 id="22-响应式布局"><a href="#22-响应式布局" class="headerlink" title="22.响应式布局"></a>22.响应式布局</h4><p>   1.百分比 最简单最常用<br>    2.@media screen 最强大最复杂的<br>    3.rem 最适用于移动端<br>    4.flex(弹性)布局 ：粗略布局，不适用于精确计算<br>    给容器加display:flex ,那么该容器内的元素就遵从flex布局<br>    <pre class="line-numbers language-html" data-language="html"><code class="language-html">flex-direction: 更改元素的排列方向
+row(默认值):里面的子集在一行排列
+row-reverse:在一行排列，起点在右端
+column:垂直排列
+column-reverse:从下往上
+flex-wrap:定义元素的换行方式
+nowrap:不换行，如果容不下，自动等比缩小
+wrap:换行
+wrap-reverse :反向排列
+justify-content:水平方向上的对齐方式
+flex-start:默认从左往右
+flex-end 从右往左
+center:居中对齐
+space-between:等间距排列（两端定边，中间等间距）
+space-around:等间距排列
+align-items:垂直方向上的对齐方式
+flex-start：从上面排布
+flex-end:从下面排布
+center:居中
+stretch:如果没有高度将会充满容器
+align-content:多行时的对齐方式
+flex-start:顶上排列
+flex-end:顶下排列
+space-between:等间距排列（两端定边，中间等间距）
+space-around:等间距排列<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></p>
+<h3 id="PS的一些使用方法："><a href="#PS的一些使用方法：" class="headerlink" title="PS的一些使用方法："></a>PS的一些使用方法：</h3><ol>
+<li>取消自动选择图层，主动选图层按ctrl+鼠标点击</li>
+<li>隐藏参考线：ctrl+;</li>
+<li>显示刻度尺：ctrl+r</li>
+<li>矩形选框：ctrl+d  取消选框，按住空格可以移动选框</li>
+</ol>
+<h3 id="碰到的一些名词"><a href="#碰到的一些名词" class="headerlink" title="碰到的一些名词"></a>碰到的一些名词</h3><p>SEO：(Search Engine Optimization), 译为搜索引擎优化也叫网站优化技术，利用搜索引擎的规则提高提高网站上有关搜索的自然排名。</p>
+<h3 id="面试题系列"><a href="#面试题系列" class="headerlink" title="面试题系列"></a>面试题系列</h3><p>画三角: 对角线切割 实心边框</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style"><span class="token language-css">
+    <span class="token selector">.div1</span> <span class="token punctuation">&#123;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">border</span><span class="token punctuation">:</span> 100px solid transparent<span class="token punctuation">;</span>
+        <span class="token property">border-bottom-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>div1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">youyo</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://youyo-git.github.io/2021/09/24/HTML%E5%92%8CCSS%E7%AC%94%E8%AE%B0/">http://youyo-git.github.io/2021/09/24/HTML%E5%92%8CCSS%E7%AC%94%E8%AE%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">youyo</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%80%BB%E7%BB%93/">
+                                    <span class="chip bg-color">总结</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/09/24/HTML%E5%92%8CCSS%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="JavaScript学习笔记">
+                        
+                        <span class="card-title">JavaScript学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-24
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/07/04/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Vue学习笔记">
+                        
+                        <span class="card-title">Vue学习笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0/" class="post-category">
+                                    学习
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021-2022</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">youyo</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2021";
+                        var startMonth = "6";
+                        var startDate = "5";
+                        var startHour = "0";
+                        var startMinute = "0";
+                        var startSecond = "0";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/youyo-git" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2861894274@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2861894274" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2861894274" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+</html>
