@@ -495,14 +495,14 @@
 <li>组件化开发（每个组件都有自己的作用域）</li>
 </ol>
 <p>vue全家桶：vue vuex vue-router axios elementui/antd webpack node npm es6 vue/di</p>
-<h4 id="bootStrap提醒老师讲"><a href="#bootStrap提醒老师讲" class="headerlink" title="bootStrap提醒老师讲"></a>bootStrap提醒老师讲</h4><h4 id="2-差值表达式"><a href="#2-差值表达式" class="headerlink" title="2. 差值表达式"></a>2. 差值表达式</h4><p>双大括号提供了一个js执行环境，可以写任意的js表达式，但是不识别html结构</p>
+<h4 id="bootStrap提醒老师讲"><a href="#bootStrap提醒老师讲" class="headerlink" title="bootStrap提醒老师讲"></a>bootStrap提醒老师讲</h4><h4 id="2-差值表达式"><a href="#2-差值表达式" class="headerlink" title="2. 差值表达式"></a>2. 差值表达式</h4><p>双大括号<code>&#123;&#123;&#125;&#125;</code>提供了一个js执行环境，可以写任意的js表达式，但是不识别html结构</p>
 <h4 id="3-指令"><a href="#3-指令" class="headerlink" title="3. 指令"></a>3. 指令</h4><p><strong>指令都是以<code>v-</code>开头的，实现特定的功能，写在元素的开始标签中</strong><br><strong>注意：</strong>所有的指令后面的引号<code>&quot;&quot;</code>是提供一个js执行环境，不是字符串的引号，要想在里面写字符串需要双引号里嵌套单引号</p>
 <ol>
 <li><p>v-html=”数据” 把一段html结构渲染到他所绑定的元素中</p>
 </li>
 <li><p>v-text 和双大扩号作用差不多，不识别html标签</p>
 </li>
-<li><p>v-bind:属性=”数据” 可简写为 <code>:属性=&quot;数据&quot;</code></p>
+<li><p>v-bind:属性=”数据(js表达式)” 可简写为 <code>:属性=&quot;数据(js表达式)&quot;</code></p>
 <ul>
 <li><p>特殊情况:class</p>
 <ol>
@@ -585,7 +585,7 @@
 <span class="token operator">&lt;</span>script<span class="token operator">></span>
 
     <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-        el<span class="token operator">:</span><span class="token string">"#app"</span><span class="token punctuation">,</span>
+        el<span class="token operator">:</span><span class="token string">"#app"</span><span class="token punctuation">,</span>  <span class="token comment">// 一个Vue实例对应一个根容器</span>
         data<span class="token operator">:</span><span class="token punctuation">&#123;</span>
             see<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
         <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
@@ -2010,7 +2010,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2022</span>
+                <span id="year">2021-2024</span>
             
             <span id="year">2021</span>
             <a href="/about" target="_blank">youyo</a>
